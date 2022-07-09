@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="./unnamed.jpg" type="image/x-icon">
+    <!-- таким образом мы добавили иконку в заголовок страницы -->
+    <title>Home page</title>
+    <style>
+        .btn-close2 {
+            float: right!important;
+            color: red!important;
+        }
+        
+        .data-width {
+            width: 35%!important;
+        }
+        
+        .bsbsbs {
+            border: 2px solid white;
+            box-shadow: 0px 0px 20px skyblue;
+        }
+        
+        .neeeew {
+            width: 100%!important;
+        }
+        
+        .rounded-img {
+            width: 60%;
+            border-color: black;
+            border-radius: 50%;
+            border: 2px solid black;
+            box-shadow: 0px 0px 50px slateblue;
+            padding: 0.3em;
+            margin: 0px 0 10px 0;
+        }
+        
+        .new-img {
+            border-radius: 30%;
+        }
+        
+        .caruselka-imgs {
+            width: 50rem;
+        }
+        
+        .open-button {
+            background-color: #555;
+            color: white;
+            width: 280px;
+        }
+        /* Всплывающая форма-скрыта по умолчанию */
+        
+        .form-popup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            -webkit-transform: translate(-50%, -50%);
+            -ms-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+        }
+        /* Добавление стилей в контейнер форм */
+        
+        .form-container {
+            min-width: 500px;
+            max-width: 1000px;
+            padding: 10px;
+            background-color: white;
+            border-radius: 5%;
+        }
+        /* Поля ввода полной ширины */
+        
+        .form-container input[type=text],
+        .form-container input[type=password] {
+            padding: 15px;
+            margin: 5px 0 0px 0;
+            width: 32%;
+            border: none;
+            background: #f1f1f1;
+        }
+        /* Когда входы получают фокус, сделайте что-нибудь */
+        
+        .form-container input[type=text]:focus,
+        .form-container input[type=password]:focus {
+            background-color: #ddd;
+            outline: none;
+        }
+        /* Установите стиль для кнопки отправить/кнопка */
+        
+        .form-container .btn {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+            width: 49%;
+            height: 50px!important;
+            margin-top: 0.4em;
+            margin-bottom: 10px;
+            opacity: 0.8;
+        }
+        /* Добавьте красный цвет фона к кнопке отмена */
+        
+        .form-container .cancel {
+            background-color: red;
+            width: 49%;
+        }
+        /* Добавьте некоторые эффекты наведения на кнопки */
+        
+        .form-container .btn:hover,
+        .open-button:hover {
+            background-color: beige;
+            opacity: 1;
+        }
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js" integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-kjU+l4N0Yf4ZOJErLsIcvOU2qSb74wXpOhqTvwVx3OElZRweTnQ6d31fXEoRD1Jy" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+</head>
+
+
+<body class="bg-dark">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container m-0">
+            <a class="navbar-brand p-0" href="./index.html"><img src="./images/Hacks.png" alt="" width="100px"></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+            <nav class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="./index.html">Профиль</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./forum.html">Форум</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="./image.html">Корзина</a>
+                    </li>
+
+                </ul>
+
+            </nav>
+
+
+        </div>
+        <div class="navbar-collapse collapse justify-content-end navbar-toggler-right" id="navbarCollapse">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item mx-1">
+                    <a class="nav-link btn btn-primary open-button" onclick="openForm()">Вход</a>
+                    <div class="form-popup" id="myForm">
+                        <form action="./vhod.php" class="form-container bg-dark bsbsbs">
+                            <br><button type="button" class="btn-close p-0 btn-close2" aria-label="Close" onclick="closeForm()"></button>
+                            <h1 class="text-light ">Вход в личный кабинет</h1>
+                            <input type="text" placeholder="E-mail" name="email" required class="neeeew"><br>
+                            <input type="password" placeholder="Пароль" name="psw" required class="neeeew"><br>
+
+                            <button type="submit" class="btn">Вход</button>
+                            <button type="button" class="btn cancel" onclick="closeForm()">Закрыть</button>
+                        </form>
+                    </div>
+
+                    <script>
+                        function openForm() {
+                            document.getElementById("myForm").style.display = "block";
+                        }
+
+                        function closeForm() {
+                            document.getElementById("myForm").style.display = "none";
+                        }
+                    </script>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link btn btn-success justify-content-end mx-1 open-button" onclick="openFormRegister()">Регистрация</a>
+
+                    <div class="form-popup" id="myFormReg">
+
+                        <form action="./register.php" class="form-container m-0 p-1 bg-dark bsbsbs">
+                            <br><button type="button" class="btn-close p-0 btn-close2" aria-label="Close" onclick="closeFormRegister()"></button>
+
+                            <h1 class="text-light m-0">Регистрация</h1>
+                            <input type="text" placeholder="Фамилия" name="LastName" required>
+                            <input type="text" placeholder="Имя" name="FirstName" required>
+                            <input type="text" placeholder="Отчество" name="MiddleName" required><br>
+                            <input type="text" placeholder="Дата рождения(дд.мм.гггг)" name="date" class="data-width" required>
+                            <br>
+                            <input type="text" placeholder="E-mail" name="email" required>
+                            <br>
+                            <input type="password" placeholder="Пароль" name="psw" required>
+                            <input type="password" placeholder="Повторите пароль" name="pswTwo" required>
+                            <br>
+                            <div class="">
+                                <button type="submit" class="btn">Зарегестрироваться</button>
+                                <button type="button" class="btn cancel float-end" onclick="closeFormRegister()">Отмена</button>
+                            </div>
+
+                        </form>
+                    </div>
+
+                    <script>
+                        function openFormRegister() {
+                            document.getElementById("myFormReg").style.display = "block";
+                        }
+
+                        function closeFormRegister() {
+                            document.getElementById("myFormReg").style.display = "none";
+                        }
+                    </script>
+                </li>
+            </ul>
+
+        </div>
+    </nav>
+
+</body>
+
+</html>

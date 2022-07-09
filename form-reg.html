@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Регистрация</title>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js" integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-kjU+l4N0Yf4ZOJErLsIcvOU2qSb74wXpOhqTvwVx3OElZRweTnQ6d31fXEoRD1Jy" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+
+</head>
+
+<body class="bg-dark">
+    <div class="container text-left">
+        <h1 class="text-light">Регистрация нового пользователя</h1>
+        <form action="script.php" method="POST">
+            <div class="input-group">
+                <p class="text-light mx-5 p-0 m-0">Фамилия</p>
+                <p class="text-light mx-4 p-0 m-0"></p>></p>
+                <p class="text-light mx-5 p-0">Имя </p>
+                <p class="text-light mx-3 p-0 m-0"></p>></p>
+                <p class="text-light mx-5 p-0">Отчество</p>
+            </div>
+            <div class="input-group">
+
+                <input type="text" name="last_name" placeholder="Введите вашу фамилию ">
+
+                <input type="text" name="first_name" placeholder="Введите ваше имя "></p>
+                <input type="text" name="father_name" placeholder="Введите ваше отчество ">
+
+                </ul>
+
+            </div>
+            <p class="text-light m-0 p-0">Дата рождения</p>
+            <input type="date" name="born_info" placeholder="День/Месяц/Год "><br>
+            <p class="text-light m-0 p-0">Email</p>
+
+            <input type="email" name="email" placeholder="Введите e-mail "><br>
+
+            <p class="text-light m-0 p-0">Страна</p>
+            <input type="text" name="country" placeholder="Страна "><br>
+            <p class="text-light m-0 p-0">Город</p>
+            <input type="text" name="city" placeholder="Город"><br>
+            <p class="text-light m-0 p-0">Пароль</p>
+            <input type="password" name="pass" placeholder="Пароль "><br>
+            <p class="text-light m-0 p-0">Подтвердите пароль</p>
+            <input type="password" name="pass_povt" placeholder="Подтвердите пароль"><br>
+
+            <input type="submit" class="btn btn-primary my-1" value="Зарегистрироваться">
+            <input type="reset" class="btn btn-secondary" value="Очистить форму">
+        </form>
+    </div>
+
+</body>
+
+</html>
